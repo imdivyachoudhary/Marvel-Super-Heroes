@@ -1,0 +1,111 @@
+/* body {
+  font-family: sans-serif;
+} */
+
+header {
+  background-image: linear-gradient(-90deg, #aa8f59, #a9cfcf);
+  text-align: center;
+  padding: 20px;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 50px 0;
+}
+
+form input {
+  padding: 5px;
+  width: 20%;
+}
+
+button {
+  margin-left: 10px;
+  width: 100px;
+  height: 40px;
+  font-family: monospace;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+button:hover {
+  box-shadow: 0px 0px 5px 2px rgb(194, 182, 182);
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 50px;
+}
+
+#marvel-images .card {
+  cursor: pointer;
+  margin: 10px;
+  border-width: 2px;
+  /* width: 300px; */
+}
+
+#marvel-images .card:hover {
+  border-width: 5px;
+}
+
+#marvel-images .card-image {
+  height: 300px;
+  width: 300px;
+}
+
+#marvel-images .card-image img {
+  height: 100%;
+  width: 100%;
+}
+
+#marvel-images .card-body {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  /* flex-wrap: wrap; */
+  /* justify-content: space-between; */
+  /* align-items: center; */
+  justify-content: center;
+}
+
+/* #marvel-images .card-body .marvel-name{
+  width: 80%;
+  overflow-wrap: break-word;
+}
+
+#marvel-images .card-body .favorite-icon{
+  width: 20%;
+  overflow-wrap: break-word;
+} */
+
+#marvel-images .card-body a {
+  text-decoration: none;
+  color: black;
+}
+
+#marvel-images .like-icon {
+  font-size: 1.5rem;
+  color: black;
+}
+
+#marvel-images .like-icon .liked {
+  color: rgba(255, 0, 0, 0.74);
+}
+
+.btn-favorite{
+  background-color: black;
+  color: white;
+}
+
+.btn-favorite:hover{
+  background-color: rgb(68, 64, 64);
+  color: white;
+}
+
+.no-list{
+  font-size: 2rem;
+  color: gray;
+}

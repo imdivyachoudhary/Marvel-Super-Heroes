@@ -1,0 +1,59 @@
+/* body {
+  font-family: sans-serif;
+} */
+
+header {
+  background-image: linear-gradient(-90deg, #aa8f59, #a9cfcf);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.marvel-description p {
+  /* text-align: justify; */
+  text-align: center;
+}
+
+.marvel-description {
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+  font-weight: bold;
+}
+
+.main-body {
+  padding: 20px;
+  /* display: flex;
+  flex-direction: column; */
+  /* justify-content: center; */
+  /* align-items: center; */
+}
+
+.main-body .marvel-image {
+  padding: 5px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.main-body .marvel-image img {
+  height: 500px;
+  width: 500px;
+}
+
+.main-body .marvel-details {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 50px;
+}
+
+.main-body .marvel-details .card {
+  padding: 20px;
+  width: 20%;
+  margin: 10px;
+  display: none;
+  /* box-sizing: border-box; */
+}
