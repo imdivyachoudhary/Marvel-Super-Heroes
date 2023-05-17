@@ -15,8 +15,6 @@ showCharacters();
 searchButton.addEventListener("click", function (event) {
   event.preventDefault();
   // console.log("hi");
-  let url = "https://gateway.marvel.com/v1/public/characters";
-
   let ts = Date.now();
   let hash = CryptoJS.MD5(ts + private_key + apikey).toString();
   let searchString = searchCharacter.value;
@@ -26,20 +24,18 @@ searchButton.addEventListener("click", function (event) {
     hash: hash,
     orderBy: "-modified",
     nameStartsWith: searchString,
-    limit: 50
+    limit: 50,
   };
 
   showCharacters(reqData);
 });
 
-
 // Function to send request to the Marvel Api to fetch marvels
 function showCharacters(reqData = null) {
   let url = "https://gateway.marvel.com/v1/public/characters";
-
-  let ts = Date.now();
-  let hash = CryptoJS.MD5(ts + private_key + apikey).toString();
   if (!reqData) {
+    let ts = Date.now();
+    let hash = CryptoJS.MD5(ts + private_key + apikey).toString();
     reqData = {
       ts: ts,
       apikey: apikey,
@@ -55,7 +51,8 @@ function showCharacters(reqData = null) {
     if (characters.length === 0) {
       alert("No Marvels to show!!!");
     } else {
-      marvelImages.innerHTML = "";
+      // marvelImages.innerHTML = "";
+      marvelImages.empty();
       characters.forEach((element) => {
         let id = element.id;
         let name = element.name;
@@ -88,7 +85,6 @@ function showCharacters(reqData = null) {
   // console.log(ts);
 }
 
-
 // On clicking the marvel, this function will show details about that marvel
 function showAbout(ele) {
   // console.log(ele.getAttribute("data-id"))
@@ -96,7 +92,6 @@ function showAbout(ele) {
   sessionStorage.setItem("aboutMarvelId", ele.getAttribute("data-id"));
   window.location.href = "about.html";
 }
-
 
 // For adding Marvels to Favorites
 function manageFavorites(event, ele) {
