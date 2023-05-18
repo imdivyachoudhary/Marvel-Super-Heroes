@@ -18,7 +18,7 @@ form {
 
 form input {
   padding: 5px;
-  width: 200px;
+  width: 500px;
 }
 
 button {
@@ -112,6 +112,11 @@ button:hover {
 }
 
 @media (max-width: 620px) {
+
+  form input {
+    width: 70%;
+  }
+
   #marvel-images .card-image {
     height: 400px;
     width: 80vw;
