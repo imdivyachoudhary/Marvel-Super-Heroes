@@ -63,19 +63,24 @@ function showAbout(ele) {
 // For removing Marvels From Favorites
 function manageFavorites(event, ele) {
   event.stopPropagation();
-  // console.log(ele)
-  let id = ele.getAttribute("data-id");
-  let favoriteMarvels = JSON.parse(localStorage.getItem("favoriteMarvels"));
-  if (favoriteMarvels) {
-    // console.log(typeof(favoriteMarvels));
-    if (favoriteMarvels.includes(id)) {
-      let cardId = "#card" + id;
-    //   console.log(favoriteMarvels);
-      favoriteMarvels = favoriteMarvels.filter(item => item != id);
-    //   console.log(favoriteMarvels);
-      localStorage.setItem("favoriteMarvels", JSON.stringify(favoriteMarvels));
-      alert("Marvel Removed From your Favorites");
-      $(cardId).remove();
+  if (confirm("Are you sure you ant to remove it from Favorites?")) {
+    // console.log(ele)
+    let id = ele.getAttribute("data-id");
+    let favoriteMarvels = JSON.parse(localStorage.getItem("favoriteMarvels"));
+    if (favoriteMarvels) {
+      // console.log(typeof(favoriteMarvels));
+      if (favoriteMarvels.includes(id)) {
+        let cardId = "#card" + id;
+        //   console.log(favoriteMarvels);
+        favoriteMarvels = favoriteMarvels.filter((item) => item != id);
+        //   console.log(favoriteMarvels);
+        localStorage.setItem(
+          "favoriteMarvels",
+          JSON.stringify(favoriteMarvels)
+        );
+        alert("Marvel Removed From your Favorites");
+        $(cardId).remove();
+      }
     }
   }
 }
