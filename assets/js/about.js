@@ -1,6 +1,12 @@
 // Retrieving the id of marvel clicked from session
 var aboutMarvelId = sessionStorage.getItem("aboutMarvelId");
 
+if (!aboutMarvelId) {
+  window.location.href = "index.html";
+}
+
+sessionStorage.removeItem("aboutMarvelId");
+
 var apikey = "711ae2113dc5b535e66dc2ecb1833930";
 var private_key = "602efb43dfe796b9454e3e7776bcd160bbef90ac";
 
@@ -23,7 +29,8 @@ function showAbout() {
       document.getElementById(
         "marvel-image"
       ).innerHTML = `<img src="${src}" class="card-img-top" alt="" />`;
-      document.getElementById("marvel-description").innerText = character.description;
+      document.getElementById("marvel-description").innerText =
+        character.description;
 
       // To display list of Comics
       let comics = character.comics.items;
