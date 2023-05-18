@@ -16,7 +16,7 @@ function showCharacters() {
   let reqData = { ts: ts, apikey: apikey, hash: hash, orderBy: "modified" };
 
   let favoriteMarvels = JSON.parse(localStorage.getItem("favoriteMarvels"));
-  if (favoriteMarvels) {
+  if (favoriteMarvels && favoriteMarvels.length > 0) {
     favoriteMarvels.forEach((element) => {
       $.get(url + element, reqData, function (data) {
         if (data.data.results.length > 0) {
@@ -78,8 +78,12 @@ function manageFavorites(event, ele) {
           "favoriteMarvels",
           JSON.stringify(favoriteMarvels)
         );
-        alert("Marvel Removed From your Favorites");
         $(cardId).remove();
+        if (favoriteMarvels.length == 0) {
+          document.getElementById("no-list").innerText =
+            "You have not added anything to your Favorites List yet!!!";
+        }
+        alert("Marvel Removed From your Favorites");
       }
     }
   }
